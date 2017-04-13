@@ -1,6 +1,7 @@
 package locations;
 
 public class Coordinates {
+    public static final Coordinates UNKNOWN = new Coordinates(-1, -1);
     private final int row;
     private final int column;
 

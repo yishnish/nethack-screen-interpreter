@@ -26,6 +26,14 @@ public class NethackScreenInterpreterTest {
     }
 
     @Test
+    public void testMarksHeroLocationAsUnknownIfItCannotBeFound(){
+        NethackScreenInterpreter interpreter = new NethackScreenInterpreter();
+        NethackLevel level = interpreter.interpret(new char[][]{{Character.MIN_VALUE}});
+
+        assertThat(level.getHeroLocation(), equalTo(Coordinates.UNKNOWN));
+    }
+
+    @Test
     public void testAddsAMarkerForTheHeroOnTheLevelMap(){
         NethackScreenInterpreter interpreter = new NethackScreenInterpreter();
         NethackLevel level = interpreter.interpret(new char[][]{{'@', Character.MIN_VALUE}});

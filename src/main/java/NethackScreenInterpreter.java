@@ -25,7 +25,7 @@ public class NethackScreenInterpreter {
                 }
             }
         }
-        return null;
+        return Coordinates.UNKNOWN;
     }
 
 }
