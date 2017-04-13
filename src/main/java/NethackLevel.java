@@ -1,6 +1,9 @@
+import locations.Coordinates;
+
 public class NethackLevel {
     private Integer numRows;
     private Integer numColumns;
+    private Coordinates heroLocation;
 
     public NethackLevel(char[][] screenBuffer) {
         this.numRows = screenBuffer.length;
@@ -13,5 +16,13 @@ public class NethackLevel {
 
     public Integer getNumColumns() {
         return numColumns;
+    }
+
+    public void setHeroLocation(Coordinates heroLocation) {
+        this.heroLocation = heroLocation;
+    }
+
+    public Coordinates getHeroLocation() {
+        return heroLocation;
     }
 }

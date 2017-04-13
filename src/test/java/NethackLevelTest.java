@@ -1,3 +1,4 @@
+import locations.Coordinates;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -11,5 +12,14 @@ public class NethackLevelTest {
         NethackLevel level = new NethackLevel(screenBuffer);
         assertThat(level.getNumRows(), equalTo(screenBuffer.length));
         assertThat(level.getNumColumns(), equalTo(screenBuffer[0].length));
+    }
+
+    @Test
+    public void testLevelKnowsTheCoordinatesForTheHeroLocation(){
+        NethackLevel level = new NethackLevel(new char[26][80]);
+        Coordinates heroLocation = new Coordinates(1, 3);
+        level.setHeroLocation(heroLocation);
+
+        assertThat(level.getHeroLocation(), equalTo(heroLocation));
     }
 }
