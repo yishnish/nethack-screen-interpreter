@@ -6,7 +6,11 @@ import java.util.Map;
 
 public enum DungeonThing {
     VACANT('.'),
-    HERO('@');
+    HERO('@'),
+    HORIZONTAL_WALL('-'),
+    VERTICAL_WALL('|'),
+    STAIRWAY_UP('<'),
+    CLOSED_DOOR('+');
 
     private static Map<Character, DungeonThing> converter = Collections.unmodifiableMap(initializeMapping());
 

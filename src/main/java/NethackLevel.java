@@ -36,4 +36,8 @@ public class NethackLevel {
     public void setThingAt(Coordinates location, DungeonThing thing) {
         this.map[location.getRow()][location.getColumn()] = thing;
     }
+
+    public DungeonThing[][] getMap() {
+        return map;
+    }
 }
