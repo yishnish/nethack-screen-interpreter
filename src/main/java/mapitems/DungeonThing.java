@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum DungeonThing {
-    EMPTY(Character.MIN_VALUE),
+    VACANT('.'),
     HERO('@');
 
     private static Map<Character, DungeonThing> converter = Collections.unmodifiableMap(initializeMapping());
