@@ -7,11 +7,8 @@ public class NethackLevel {
     private Coordinates heroLocation;
     private DungeonThing[][] dungeonMap;
 
-    public static final int NUM_TOP_SCREEN_TEXT_ROWS = 2;
-    public static final int NUM_BOTTOM_SCREEN_TEXT_ROWS = 3;
-
     public NethackLevel(char[][] screenBuffer) {
-        this.numRows = screenBuffer.length - NUM_TOP_SCREEN_TEXT_ROWS - NUM_BOTTOM_SCREEN_TEXT_ROWS;
+        this.numRows = screenBuffer.length;
         this.numColumns = screenBuffer[0].length;
         dungeonMap = new DungeonThing[numRows][numColumns];
     }
