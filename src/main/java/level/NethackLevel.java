@@ -1,3 +1,5 @@
+package level;
+
 import locations.Coordinates;
 import mapitems.DungeonThing;
 
