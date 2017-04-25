@@ -5,12 +5,15 @@ public class NethackLevel {
     private Integer numRows;
     private Integer numColumns;
     private Coordinates heroLocation;
-    private DungeonThing[][] map;
+    private DungeonThing[][] dungeonMap;
+
+    public static final int NUM_TOP_SCREEN_TEXT_ROWS = 2;
+    public static final int NUM_BOTTOM_SCREEN_TEXT_ROWS = 3;
 
     public NethackLevel(char[][] screenBuffer) {
-        this.numRows = screenBuffer.length;
+        this.numRows = screenBuffer.length - NUM_TOP_SCREEN_TEXT_ROWS - NUM_BOTTOM_SCREEN_TEXT_ROWS;
         this.numColumns = screenBuffer[0].length;
-        map = new DungeonThing[screenBuffer.length][screenBuffer[0].length];
+        dungeonMap = new DungeonThing[numRows][numColumns];
     }
 
     public Integer getNumRows() {
@@ -30,14 +33,14 @@ public class NethackLevel {
     }
 
     public DungeonThing thingAt(Coordinates location) {
-        return this.map[location.getRow()][location.getColumn()];
+        return this.dungeonMap[location.getRow()][location.getColumn()];
     }
 
     public void setThingAt(Coordinates location, DungeonThing thing) {
-        this.map[location.getRow()][location.getColumn()] = thing;
+        this.dungeonMap[location.getRow()][location.getColumn()] = thing;
     }
 
-    public DungeonThing[][] getMap() {
-        return map;
+    public DungeonThing[][] getDungeonMap() {
+        return dungeonMap;
     }
 }
