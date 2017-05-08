@@ -3,6 +3,9 @@ package level;
 import locations.Coordinates;
 import mapitems.DungeonThing;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class NethackLevel {
     private Integer numRows;
     private Integer numColumns;
@@ -41,5 +44,14 @@ public class NethackLevel {
 
     public DungeonThing[][] getDungeonMap() {
         return dungeonMap;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NethackLevel that = (NethackLevel) o;
+        return Objects.equals(heroLocation, that.heroLocation) &&
+                Arrays.deepEquals(dungeonMap, that.dungeonMap);
     }
 }
