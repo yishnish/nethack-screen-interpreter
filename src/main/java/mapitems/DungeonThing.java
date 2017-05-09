@@ -10,7 +10,10 @@ public enum DungeonThing {
     HORIZONTAL_WALL('-'),
     VERTICAL_WALL('|'),
     STAIRWAY_UP('<'),
-    CLOSED_DOOR('+');
+    CLOSED_DOOR('+'),
+    HALLWAY('#'),
+    UNKNOWN(Character.MIN_VALUE),
+    FELINE('f');
 
     private static Map<Character, DungeonThing> converter = Collections.unmodifiableMap(initializeMapping());
 
