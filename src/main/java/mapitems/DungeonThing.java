@@ -12,7 +12,9 @@ public enum DungeonThing {
     STAIRWAY_UP('<'),
     CLOSED_DOOR('+'),
     HALLWAY('#'),
+    EMPTY_WHAT_IS_THIS_REALLY(' '),
     UNKNOWN(Character.MIN_VALUE),
+    LIZARDO(':'),
     FELINE('f');
 
     private static Map<Character, DungeonThing> converter = Collections.unmodifiableMap(initializeMapping());
